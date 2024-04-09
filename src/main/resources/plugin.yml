@@ -1,0 +1,4 @@
+name: MCdatabase
+version: '${project.version}'
+main: agjoku.mcdatabase.MCdatabase
+api-version: '1.20'
