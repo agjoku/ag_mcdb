@@ -2,3 +2,8 @@ name: MCdatabase
 version: 1.0
 main: agjoku.mcdatabase.MCdatabase
 api-version: '1.20'
+
+commands:
+  hashing:
+    description: hashing command
+    usage: /hashing <HashAlgorithm> <String> <copy clipboard>
