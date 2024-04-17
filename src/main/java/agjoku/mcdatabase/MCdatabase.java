@@ -1,5 +1,6 @@
 package agjoku.mcdatabase;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
@@ -21,7 +22,7 @@ public final class MCdatabase extends JavaPlugin implements Listener, TabComplet
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
-
+        Bukkit.getServer().getPluginManager().registerEvents(new SubInventoryClass(), this);
     }
 
     @Override
@@ -53,6 +54,25 @@ public final class MCdatabase extends JavaPlugin implements Listener, TabComplet
                     sender.sendMessage("クリップボードにコピーしました");
                 }
                 return true;
+            }
+            return false;
+        }
+
+        if(command.getName().equalsIgnoreCase("agdb")){
+            if(args.length >= 2){
+                DB db = new DB();
+                try {
+                    Admin admin = db.agDBAccess(args);
+                    if(admin.isLogin_flag()){
+                        sender.sendMessage("認証に成功しました。ようこそ" + admin.getName() + "様。" );
+                    } else {
+                        sender.sendMessage("認証に失敗しました。");
+                        sender.sendMessage("ユーザ名かパスワードが間違っています。");
+                    }
+                    return true;
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
             return false;
         }

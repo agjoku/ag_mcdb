@@ -7,3 +7,7 @@ commands:
   hashing:
     description: hashing command
     usage: /hashing <HashAlgorithm> <String> <copy clipboard>
+
+  agdb:
+    description: access ag db
+    usage: /agdb <username> <password>
