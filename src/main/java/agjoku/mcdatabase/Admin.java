@@ -3,6 +3,7 @@ package agjoku.mcdatabase;
 public class Admin {
 
     private String name;
+    private String password;
     private boolean login_flag;
 
     public String getName() {
@@ -14,6 +15,7 @@ public class Admin {
     }
 
     public void setPassword(String password) {
+        this.password = password;
     }
 
     public boolean isLogin_flag() {

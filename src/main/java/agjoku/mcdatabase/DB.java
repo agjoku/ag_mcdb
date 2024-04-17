@@ -11,6 +11,7 @@ public class DB {
 
         public static Admin agDBAccess(String[] args){
 
+            String[] str = args;
             String sql = "select * from acount where name = ? and pass = ?;";
 
             Admin admin = new Admin();
@@ -20,8 +21,8 @@ public class DB {
                 con = DriverManager.getConnection(url, user, password);
 
                 PreparedStatement pstmt = con.prepareStatement(sql);
-                pstmt.setString(1, args[0]);
-                pstmt.setString(2, args[1]);
+                pstmt.setString(1,str[0]);
+                pstmt.setString(2,str[1]);
                 ResultSet rs = pstmt.executeQuery();
 
                 if(rs.next()){
