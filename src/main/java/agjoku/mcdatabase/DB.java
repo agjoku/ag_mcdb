@@ -42,17 +42,4 @@ public class DB {
             }
             return admin;
         }
-
-//        public static void main(String[] args){
-//            String[] str = new String[2];
-//            str[0] = "ag";
-//            str[1] = "pass";
-//            Admin admin = agDBAccess(str);
-//            if(admin.isLogin_flag()){
-//                System.out.println("成功");
-//            } else {
-//                System.out.println("失敗");
-//            }
-//
-//        }
 }
